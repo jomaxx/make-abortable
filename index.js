@@ -2,7 +2,8 @@
 
 module.exports = makeAbortable;
 
-function makeAbortable(promise, { signal }) {
+function makeAbortable(promise, opts) {
+  var signal = opts.signal;
   if (signal.aborted) {
     return Promise.reject(createAbortError());
   }
@@ -19,7 +20,7 @@ function makeAbortable(promise, { signal }) {
 }
 
 function createAbortError() {
-  let abortError;
+  var abortError;
 
   try {
     abortError = new DOMException('Aborted', 'AbortError');
