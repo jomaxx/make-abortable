@@ -1,6 +1,6 @@
 {
   "name": "make-abortable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Make promises abortable! That's it! :)",
   "main": "index.js",
   "scripts": {
